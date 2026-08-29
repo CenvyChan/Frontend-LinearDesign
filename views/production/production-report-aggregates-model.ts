@@ -1,0 +1,4 @@
+import type { ProductionReportAggregateCandidate, ProductionReportAggregateConfirmResult } from '#/api/productionReportAggregate';
+export function buildProductionReportAggregatesModel(rows:ProductionReportAggregateCandidate[]){const confirmable=rows.filter(r=>r.confirmable);return {metrics:[{label:'聚合候选',value:rows.length},{label:'可确认',value:confirmable.length},{label:'不可确认',value:rows.length-confirmable.length}],totalReportQuantity:rows.reduce((sum,r)=>sum+(r.reportQuantity??0),0)};}
+export function summarizeConfirmResults(results:ProductionReportAggregateConfirmResult[]){const failures=results.filter(r=>!r.success);return {successCount:results.length-failures.length,failureCount:failures.length,failureMessages:failures.map(r=>r.message??'未知错误')};}
+export function candidateRowKey(row:ProductionReportAggregateCandidate){return `${row.orderId}:${row.erpSourceEntryId??'na'}`;}

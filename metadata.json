@@ -1,0 +1,6 @@
+{
+  "name": "MES 智能制造与企业管理平台",
+  "description": "基于 Vue 3 + TypeScript 与 Linear 风格的高性能 MES/ERP 企业级智能制造管理与生产协同系统",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,310 @@
+@import '@vben/tailwind-config/theme';
+
+/* Ensure utility classes used by the app itself are scanned in dev/build. */
+@source '../**/*.{css,scss,ts,tsx,js,jsx,vue}';
+
+/* Also scan workspace UI/layout packages consumed by web-ele. */
+@source '../../../../packages/**/*.{css,scss,ts,tsx,js,jsx,vue}';
+
+/* 全局：数字输入框只保留输入能力，移除左右/上下步进按钮。
+   MES 的数量录入均为直接键入具体数值，步进器既占宽度又易误触。
+   用样式统一收敛而非逐个组件加 :controls="false"，新增用法自动继承。 */
+.el-input-number .el-input-number__decrease,
+.el-input-number .el-input-number__increase {
+  display: none !important;
+}
+
+.el-input-number .el-input__wrapper {
+  padding-right: 11px !important;
+  padding-left: 11px !important;
+}
+
+.el-input-number .el-input__inner {
+  text-align: left !important;
+}
+
+/* MES V2 pages are operational work surfaces: keep lists dominant and diagnostics compact. */
+:where(.warehouse-v2-page, .production-instock-v2-page) {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  min-height: 100% !important;
+  padding: 12px !important;
+  color: var(--el-text-color-primary) !important;
+  background: var(--el-bg-color-page) !important;
+}
+
+:where(.warehouse-v2-page, .production-instock-v2-page) :where(.hero-panel) {
+  order: 1 !important;
+}
+
+:where(.warehouse-v2-page, .production-instock-v2-page) :where(.metric-grid) {
+  order: 2 !important;
+}
+
+:where(.warehouse-v2-page, .production-instock-v2-page) :where(.table-panel) {
+  order: 3 !important;
+}
+
+:where(.warehouse-v2-page, .production-instock-v2-page) :where(.stage-panel) {
+  order: 4 !important;
+}
+
+:where(.warehouse-v2-page, .production-instock-v2-page) :where(.attention-grid) {
+  order: 5 !important;
+}
+
+.order-lifecycle-v2-page .diagnostics-content {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+}
+
+.order-lifecycle-v2-page .command-panel {
+  order: 1 !important;
+}
+
+.order-lifecycle-v2-page .detail-panel {
+  order: 2 !important;
+}
+
+.order-lifecycle-v2-page .stage-panel {
+  order: 3 !important;
+}
+
+.order-lifecycle-v2-page .attention-grid {
+  order: 4 !important;
+}
+
+:where(.warehouse-v2-page, .production-instock-v2-page, .order-lifecycle-v2-page)
+  :where(.hero-panel, .command-panel, .metric-item, .stage-panel, .attention-panel, .table-panel, .detail-panel) {
+  margin-bottom: 0 !important;
+  color: var(--el-text-color-primary) !important;
+  background: var(--el-bg-color) !important;
+  border-color: var(--el-border-color-light) !important;
+  border-radius: 6px !important;
+}
+
+:where(.warehouse-v2-page, .production-instock-v2-page) .hero-panel {
+  align-items: center !important;
+  min-height: 54px !important;
+  padding: 10px 12px !important;
+  border-left: 3px solid var(--el-color-primary) !important;
+}
+
+:where(.warehouse-v2-page, .production-instock-v2-page) .hero-panel h2,
+.order-lifecycle-v2-page .query-title strong {
+  margin: 2px 0 0 !important;
+  color: var(--el-text-color-primary) !important;
+  font-size: 17px !important;
+  line-height: 1.35 !important;
+}
+
+:where(.warehouse-v2-page, .production-instock-v2-page) .hero-panel p,
+.order-lifecycle-v2-page .query-title span {
+  max-width: min(720px, 58vw) !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  color: var(--el-text-color-secondary) !important;
+  font-size: 12px !important;
+  line-height: 1.35 !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+:where(.warehouse-v2-page, .production-instock-v2-page, .order-lifecycle-v2-page) .metric-grid,
+.order-lifecycle-v2-page .command-metrics {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
+  gap: 8px !important;
+  margin-bottom: 0 !important;
+}
+
+:where(.warehouse-v2-page, .production-instock-v2-page, .order-lifecycle-v2-page) .metric-item,
+.order-lifecycle-v2-page .command-metrics > div {
+  min-height: 44px !important;
+  padding: 8px 10px !important;
+}
+
+:where(.warehouse-v2-page, .production-instock-v2-page, .order-lifecycle-v2-page) .metric-item strong,
+.order-lifecycle-v2-page .command-metrics strong {
+  color: var(--el-text-color-primary) !important;
+  font-size: 18px !important;
+  line-height: 1.1 !important;
+}
+
+:where(.warehouse-v2-page, .production-instock-v2-page, .order-lifecycle-v2-page) .metric-danger strong {
+  color: var(--el-color-danger) !important;
+}
+
+:where(.warehouse-v2-page, .production-instock-v2-page, .order-lifecycle-v2-page)
+  :where(.stage-panel, .attention-panel, .table-panel, .detail-panel) {
+  padding: 10px !important;
+}
+
+:where(.warehouse-v2-page, .production-instock-v2-page, .order-lifecycle-v2-page) .section-header {
+  position: relative !important;
+  align-items: center !important;
+  min-height: 22px !important;
+  margin-bottom: 8px !important;
+}
+
+:where(.warehouse-v2-page, .production-instock-v2-page, .order-lifecycle-v2-page) .section-header strong {
+  color: var(--el-text-color-primary) !important;
+  font-size: 13px !important;
+}
+
+:where(.warehouse-v2-page, .production-instock-v2-page, .order-lifecycle-v2-page) .section-header > span {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 0 0 auto !important;
+  width: 16px !important;
+  height: 16px !important;
+  overflow: hidden !important;
+  color: transparent !important;
+  cursor: help !important;
+  background: var(--el-bg-color) !important;
+  border: 1px solid var(--el-border-color) !important;
+  border-radius: 50% !important;
+}
+
+:where(.warehouse-v2-page, .production-instock-v2-page, .order-lifecycle-v2-page) .section-header > span::after {
+  position: absolute !important;
+  color: var(--el-text-color-secondary) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  content: '?' !important;
+}
+
+:where(.warehouse-v2-page, .production-instock-v2-page, .order-lifecycle-v2-page) .section-header > span:hover {
+  position: absolute !important;
+  z-index: 20 !important;
+  right: 10px !important;
+  width: auto !important;
+  max-width: 320px !important;
+  height: auto !important;
+  min-height: 28px !important;
+  padding: 6px 8px !important;
+  overflow: visible !important;
+  color: var(--el-text-color-primary) !important;
+  white-space: normal !important;
+  background: var(--el-bg-color-overlay) !important;
+  border-radius: 6px !important;
+  box-shadow: var(--el-box-shadow-light) !important;
+}
+
+:where(.warehouse-v2-page, .production-instock-v2-page, .order-lifecycle-v2-page) .section-header > span:hover::after {
+  display: none !important;
+}
+
+:where(.warehouse-v2-page, .production-instock-v2-page, .order-lifecycle-v2-page) .stage-rail {
+  display: flex !important;
+  gap: 8px !important;
+  overflow-x: auto !important;
+  padding-bottom: 2px !important;
+}
+
+:where(.warehouse-v2-page, .production-instock-v2-page, .order-lifecycle-v2-page) :where(.stage-node, .stage-rail > button) {
+  display: grid !important;
+  grid-template-columns: minmax(76px, 1fr) auto !important;
+  align-items: center !important;
+  flex: 1 0 126px !important;
+  min-height: 54px !important;
+  gap: 3px 8px !important;
+  padding: 7px 9px !important;
+  text-align: left !important;
+  background: var(--el-fill-color-lighter) !important;
+  border: 1px solid var(--el-border-color-lighter) !important;
+  border-left: 3px solid var(--el-color-info) !important;
+  border-radius: 6px !important;
+}
+
+:where(.warehouse-v2-page, .production-instock-v2-page, .order-lifecycle-v2-page) :where(.stage-node, .stage-rail > button) strong {
+  margin: 0 !important;
+  color: var(--el-text-color-primary) !important;
+  font-size: 16px !important;
+  line-height: 1 !important;
+}
+
+:where(.warehouse-v2-page, .production-instock-v2-page, .order-lifecycle-v2-page) :where(.stage-node, .stage-rail > button) :where(.el-progress, small, em, .stage-desc) {
+  grid-column: 1 / -1 !important;
+  min-width: 0 !important;
+}
+
+:where(.warehouse-v2-page, .production-instock-v2-page, .order-lifecycle-v2-page) :where(.stage-node, .stage-rail > button) :where(small, .stage-desc) {
+  overflow: hidden !important;
+  color: var(--el-text-color-secondary) !important;
+  font-size: 12px !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+:where(.warehouse-v2-page, .production-instock-v2-page, .order-lifecycle-v2-page) :where(.stage-node--danger, .stage-danger) {
+  background: var(--el-color-danger-light-9) !important;
+  border-left-color: var(--el-color-danger) !important;
+}
+
+:where(.warehouse-v2-page, .production-instock-v2-page, .order-lifecycle-v2-page) :where(.stage-node--warning, .stage-warning) {
+  background: var(--el-color-warning-light-9) !important;
+  border-left-color: var(--el-color-warning) !important;
+}
+
+:where(.warehouse-v2-page, .production-instock-v2-page, .order-lifecycle-v2-page)
+  :where(.stage-node--success, .stage-node--stable, .stage-success, .stage-stable) {
+  background: var(--el-color-success-light-9) !important;
+  border-left-color: var(--el-color-success) !important;
+}
+
+:where(.warehouse-v2-page, .production-instock-v2-page, .order-lifecycle-v2-page) .attention-grid {
+  display: grid !important;
+  grid-template-columns: minmax(240px, 0.85fr) minmax(360px, 1.15fr) !important;
+  gap: 8px !important;
+  margin-bottom: 0 !important;
+}
+
+:where(.warehouse-v2-page, .production-instock-v2-page, .order-lifecycle-v2-page) :where(.issue-list, .chain-list) {
+  gap: 6px !important;
+}
+
+:where(.warehouse-v2-page, .production-instock-v2-page, .order-lifecycle-v2-page) :where(.issue-list, .chain-list) > div {
+  min-height: 30px !important;
+  padding: 5px 7px !important;
+  background: var(--el-fill-color-lighter) !important;
+  border-color: var(--el-border-color-lighter) !important;
+}
+
+:where(.warehouse-v2-page, .production-instock-v2-page, .order-lifecycle-v2-page) .el-empty {
+  padding: 4px 0 !important;
+}
+
+@media (max-width: 1100px) {
+  :where(.warehouse-v2-page, .production-instock-v2-page, .order-lifecycle-v2-page) .attention-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 720px) {
+  :where(.warehouse-v2-page, .production-instock-v2-page) .hero-panel {
+    align-items: stretch !important;
+    flex-direction: column !important;
+  }
+}
+
+/* 表格操作列统一收敛：直接相邻的按钮组，或命名为 action/operation 的容器，
+   一律强制单行 inline-flex，不可换行、不可收缩。避免逐页面补 nowrap 样式，
+   新增列表页只要遵循"按钮直接相邻"或"操作容器命名含 action/operation"即可自动生效。 */
+.el-table__body .el-table__cell > .cell:has(> .el-button + .el-button),
+.el-table__body .el-table__cell > .cell :is([class*='action'], [class*='operation']):has(> .el-button + .el-button) {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: nowrap !important;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.el-table__body .el-table__cell > .cell:has(> .el-button + .el-button) > .el-button {
+  flex: 0 0 auto;
+  margin-left: 0;
+}

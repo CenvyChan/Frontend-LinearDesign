@@ -1,0 +1,63 @@
+{
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "codeLogin": "Code Login",
+    "qrcodeLogin": "Qr Code Login",
+    "forgetPassword": "Forget Password",
+    "profile": "Profile",
+    "firstLogin": "First Login Password Change"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "analytics": "Analytics",
+    "workspace": "Workspace",
+    "overviewV2": "Overview V2",
+    "analyticsV2": "Analytics V2",
+    "workspaceV2": "Workspace V2",
+    "analyticsScenarioV2": "Analytics Scenario V2",
+    "workspaceScenarioV2": "Workspace Scenario V2"
+  },
+  "production": {
+    "title": "Production",
+    "order": "Orders",
+    "orderDetail": "Order Detail",
+    "orderPrint": "Print Flow Card",
+    "bomExpand": "BOM Expand",
+    "processRoute": "Process Routes",
+    "processRouteAdd": "Add Route",
+    "processRouteEdit": "Edit Route",
+    "processRouteView": "View Route",
+    "mouldSync": "Mould Sync Monitor",
+    "metalPrice": "Metal Price Monitor",
+    "mouldLifecycle": "Mould Lifecycle",
+    "exceptionDashboard": "Exception Dashboard"
+  },
+  "factory": {
+    "title": "Factory",
+    "workCenter": "Work Center",
+    "machine": "Machine",
+    "tooling": "Tooling",
+    "gauge": "Gauge",
+    "mould": "Mould Management",
+    "mouldLedger": "Mould Ledger",
+    "mouldSync": "Mould Sync",
+    "mouldLifecycle": "Mould Lifecycle",
+    "mouldQuote": "Mould Quote Analysis",
+    "precheck": "Pre-check Config"
+  },
+  "inventory": {
+    "title": "Inventory",
+    "query": "Inventory Query"
+  },
+  "system": {
+    "title": "System",
+    "user": "User Management",
+    "role": "Role Management",
+    "config": "System Config",
+    "dingtalk": "DingTalk",
+    "notificationRule": "Notification Rule",
+    "notificationLog": "Notification Log",
+    "feedback": "Improvement Suggestions"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "auth": {
+    "login": "登录",
+    "register": "注册",
+    "codeLogin": "验证码登录",
+    "qrcodeLogin": "二维码登录",
+    "forgetPassword": "忘记密码",
+    "profile": "个人中心",
+    "firstLogin": "首次登录修改密码"
+  },
+  "dashboard": {
+    "title": "概览",
+    "analytics": "分析页",
+    "workspace": "工作台",
+    "overviewV2": "总览入口 V2",
+    "analyticsV2": "分析页 V2",
+    "workspaceV2": "工作台 V2",
+    "analyticsScenarioV2": "分析页方案 V2",
+    "workspaceScenarioV2": "工作台方案 V2"
+  },
+  "production": {
+    "title": "生产管理",
+    "order": "生产工单",
+    "orderDetail": "工单详情",
+    "orderPrint": "打印流转卡",
+    "bomExpand": "BOM展开查询",
+    "processRoute": "工艺路线管理",
+    "processRouteAdd": "新增工艺路线",
+    "processRouteEdit": "编辑工艺路线",
+    "processRouteView": "查看工艺路线",
+    "mouldSync": "模具同步监控",
+    "metalPrice": "金属价格监控",
+    "mouldLifecycle": "模具生命周期管理",
+    "exceptionDashboard": "异常看板"
+  },
+  "factory": {
+    "title": "工厂建模",
+    "workCenter": "工作中心",
+    "machine": "机台设备",
+    "tooling": "工装夹具",
+    "gauge": "量具检具",
+    "mould": "模具管理",
+    "mouldLedger": "模具台账",
+    "mouldSync": "模具同步",
+    "mouldLifecycle": "模具生命周期",
+    "mouldQuote": "模具报价分析",
+    "precheck": "异常预检配置"
+  },
+  "inventory": {
+    "title": "库存管理",
+    "query": "库存查询"
+  },
+  "system": {
+    "title": "系统管理",
+    "user": "用户管理",
+    "role": "角色管理",
+    "config": "系统配置",
+    "dingtalk": "钉钉绑定",
+    "notificationRule": "通知规则",
+    "notificationLog": "通知记录",
+    "feedback": "改进建议"
+  }
+}
